@@ -22,6 +22,9 @@ class ViewController: UIViewController {
         
         //루트 뷰에 버튼을 추가한다.
         self.view.addSubview(btn)
+        
+        // 버튼의 이벤트와 메소드 btnOnClick(_:)을 연결한다.
+        btn.addTarget(self, action: #selector(btnOnClick(_:)), for: .touchUpInside)
     }
     @objc func btnOnClick(_ sender: Any) {
         // 호출한 객체가 버튼이라면
@@ -32,4 +35,26 @@ class ViewController: UIViewController {
 
 
 }
+
+
+
+/*
+ class OutletViewController: UIViewController {
+// 맴버 변수 subject를 선언한다.
+var subject : UILabel!   <- 선언과 동시에 초기화!
+
+override func viewDidLoad() {
+ // 레이블 객체를 추가하고 영역을 정의한다.
+    self.subject = UILabel()
+    self.subject.frame = CGRect(x: 50, y: 150, width: 100, height: 30)
+
+ // subject 레이블을 루트 뷰에 추가한다.
+    self.view.addSubview(subject)
+}
+
+@objc func sayHello(_ sender: Any) {
+    self.subject.text = "GoodBye~!, IB!"
+}
+ }
+}*/
 
